@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نلا | شیرینی‌سرای دست‌ساز</title>
+
+<!--
+  توضیح کلی فایل index.html
+  ---------------------------------
+  این فایل فقط ساختار (Markup) صفحه را دارد.
+  تمام ظاهر و رنگ‌بندی در فایل style.css است.
+  تمام رفتار تعاملی (سبد خرید، فرم‌ها، منو) در فایل script.js است.
+  هر سه فایل باید کنار هم در یک پوشه باشند تا سایت درست کار کند.
+-->
+
+<!-- فونت‌های گوگل: وزیرمتن برای متن معمولی، نستعلیق اردو برای عنوان‌ها -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- فایل استایل اختصاصی سایت -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ======================================================================
+     ۱. هدر و ناوبری
+     شامل: لوگو، لینک‌های منو، دکمه‌ی سبد خرید (با نشان تعداد کالا)، و دکمه‌ی
+     همبرگری برای موبایل. کلاس «scrolled» توسط جاوااسکریپت هنگام اسکرول
+     به این تگ اضافه می‌شود تا پس‌زمینه‌ی هدر تغییر کند.
+     ====================================================================== -->
+<header class="nav" id="siteNav">
+  <div class="container nav-row">
+
+    <div class="brand">
+      <span class="brand-icon"><img src="img/logo.png" alt="لوگو نلا"></span>
+      <span class="brand-name">نلا</span>
+    </div>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">درباره ما</a>
+      <a href="#products">محصولات</a>
+      <a href="#gallery">گالری</a>
+      <a href="#recipe">طرز تهیه هفته</a>
+      <a href="#contact">تماس</a>
+    </nav>
+
+    <div class="nav-actions">
+      <!-- دکمه‌ی باز کردن سبد خرید — عدد داخل نشان (badge) با جاوااسکریپت به‌روزرسانی می‌شود -->
+      <button class="cart-btn" id="cartBtn" type="button" aria-label="مشاهده سبد خرید">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="9" cy="21" r="1.4"/>
+          <circle cx="18" cy="21" r="1.4"/>
+          <path d="M2.5 3h2.4l2.1 11.4a2 2 0 0 0 2 1.6h8.3a2 2 0 0 0 2-1.6L21 7H6"/>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+
+      <!-- دکمه‌ی همبرگری، فقط در سایز موبایل نمایش داده می‌شود (در style.css) -->
+      <button class="burger" id="burgerBtn" type="button" aria-label="باز کردن منو">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- ======================================================================
+     ۲. بخش قهرمان (Hero)
+     ====================================================================== -->
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow">شیرینی‌سرای نلا</p>
+    <h1 class="reveal">بازآفرینی <span>طعم‌های اصیل ایرانی</span></h1>
+    <p class="lead reveal">از دل عطر زعفران تا شیرینی‌های ماندگار؛ هر شیرینی در نلا با مواد اولیه‌ی درجه‌یک و دقتی هنرمندانه پخته می‌شود.</p>
+    <div class="hero-actions reveal">
+      <a href="#products" class="btn">مشاهده منو</a>
+      <a href="#about" class="btn btn-ghost">داستان ما</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>اسکرول کنید</span><div class="stick"></div></div>
+</section>
+
+<!-- ======================================================================
+     ۳. درباره ما
+     ====================================================================== -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-visual reveal"><img src="img/about-kitchen.jpg" alt="آشپزخانه‌ی سنتی نلا"></div>
+    <div class="about-text reveal">
+      <div class="eyebrow">درباره نلا</div>
+      <h2>هر شیرینی، روایتی از خانه است</h2>
+      <p>نلا سال‌هاست که با الهام از دستورهای خانگی و اصیل ایرانی، شیرینی‌هایی می‌پزد که بیش از یک محصول‌اند؛ یادآور عصرهای خانوادگی و مهمانی‌های گرم هستند.</p>
+      <p>آشپزخانه‌ی ما ترکیبی است از تجربه‌ی نسل‌های گذشته و دقت آشپزخانه‌های مدرن؛ نتیجه، شیرینی‌هایی است ظریف، تازه و بی‌نظیر در طعم.</p>
+      <div class="about-stats">
+        <div><b>۳۲+</b><span>نوع شیرینی</span></div>
+        <div><b>۱۲</b><span>سال تجربه</span></div>
+        <div><b>۱۰۰٪</b><span>مواد طبیعی</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     ۴. محصولات — بخش اصلیِ سبد خرید
+     هر کارت یک دکمه‌ی «افزودن به سبد» دارد که در data-id مشخصه‌ی محصول
+     و در data-name و data-price اطلاعات لازم برای جاوااسکریپت نوشته شده.
+     خودِ لیست کامل قیمت‌ها هم در script.js (آرایه‌ی PRODUCTS) نگه‌داری
+     می‌شود تا محاسبه‌ی مبلغ همیشه از یک منبع مطمئن باشد.
+     ====================================================================== -->
+<section id="products" class="alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">منوی ما</div>
+      <h2>محصولات برگزیده</h2>
+      <p>گزیده‌ای از پرطرفدارترین شیرینی‌های خانه‌ی نلا، پخته‌شده تازه هر روز</p>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- ---------- کارت محصول ۱: باقلوا ---------- -->
+      <article class="product-card reveal">
+        <div class="product-photo product-photo--baklava"><img src="img/baghlava.jpg" alt="باقلوای پسته"></div>
+        <div class="product-body">
+          <h3>باقلوای پسته</h3>
+          <div class="name-divider"></div>
+          <p>
+            <span class="story-lead">الهام‌گرفته از شیرینی‌های سنتی ایرانی؛</span>
+            <span class="story-mid">لایه‌های نازک خمیر با مغز پسته‌ی تازه و عسل طبیعی.</span>
+            <span class="story-occ">انتخابی شایسته برای پذیرایی‌های رسمی.</span>
+          </p>
+          <div class="product-footer">
+            <span class="price">۱۸۵,۰۰۰ تومان</span>
+            <button type="button" class="btn-add"
+                    data-id="baklava-pesteh" data-name="باقلوای پسته" data-price="185000">
+              افزودن به سبد
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ---------- کارت محصول ۲: سوهان ---------- -->
+      <article class="product-card reveal">
+        <div class="product-photo product-photo--sohan"><img src="img/sohan.jpg" alt="سوهان زعفرانی قم"></div>
+        <div class="product-body">
+          <h3>سوهان زعفرانی قم</h3>
+          <div class="name-divider"></div>
+          <p>
+            <span class="story-lead">یادگار میراث دیرینه‌ی سوهان‌پزی قم؛</span>
+            <span class="story-mid">کاراملی نازک با طعم زعفران اصیل و خلال پسته.</span>
+            <span class="story-occ">همراهی دلنشین برای فنجان چای.</span>
+          </p>
+          <div class="product-footer">
+            <span class="price">۱۴۰,۰۰۰ تومان</span>
+            <button type="button" class="btn-add"
+                    data-id="sohan-ghom" data-name="سوهان زعفرانی قم" data-price="140000">
+              افزودن به سبد
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ---------- کارت محصول ۳: قطاب ---------- -->
+      <article class="product-card reveal">
+        <div class="product-photo product-photo--ghotab"><img src="img/ghotab.jpg" alt="قطاب یزدی"></div>
+        <div class="product-body">
+          <h3>قطاب یزدی</h3>
+          <div class="name-divider"></div>
+          <p>
+            <span class="story-lead">طعمی از کوچه‌پس‌کوچه‌های یزد؛</span>
+            <span class="story-mid">خمیر ترد سرخ‌شده با مغز گردو، پسته و هل.</span>
+            <span class="story-occ">مناسب دورهمی‌های صمیمی.</span>
+          </p>
+          <div class="product-footer">
+            <span class="price">۱۶۰,۰۰۰ تومان</span>
+            <button type="button" class="btn-add"
+                    data-id="ghotab-yazdi" data-name="قطاب یزدی" data-price="160000">
+              افزودن به سبد
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ---------- کارت محصول ۴: گز ---------- -->
+      <article class="product-card reveal">
+        <div class="product-photo product-photo--gaz"><img src="img/gaz.jpg" alt="گز اصفهان"></div>
+        <div class="product-body">
+          <h3>گز اصفهان</h3>
+          <div class="name-divider"></div>
+          <p>
+            <span class="story-lead">ریشه‌گرفته از باغ‌های اصفهان؛</span>
+            <span class="story-mid">نوقایی نرم با پسته‌ی درشت و رایحه‌ی گلاب.</span>
+            <span class="story-occ">هدیه‌ای ماندگار برای سفر.</span>
+          </p>
+          <div class="product-footer">
+            <span class="price">۱۲۰,۰۰۰ تومان</span>
+            <button type="button" class="btn-add"
+                    data-id="gaz-esfahan" data-name="گز اصفهان" data-price="120000">
+              افزودن به سبد
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ---------- کارت محصول ۵: زولبیا و بامیه ---------- -->
+      <article class="product-card reveal">
+        <div class="product-photo product-photo--zoolbia"><img src="img/zoolbia.jpg" alt="زولبیا و بامیه"></div>
+        <div class="product-body">
+          <h3>زولبیا و بامیه</h3>
+          <div class="name-divider"></div>
+          <p>
+            <span class="story-lead">نماد شب‌های شیرین ایرانی؛</span>
+            <span class="story-mid">ترد و شربتی، غرق در شربت زعفرانی و گلاب.</span>
+            <span class="story-occ">بهترین همراه عصرانه‌های جمعی.</span>
+          </p>
+          <div class="product-footer">
+            <span class="price">۹۵,۰۰۰ تومان</span>
+            <button type="button" class="btn-add"
+                    data-id="zoolbia-bamie" data-name="زولبیا و بامیه" data-price="95000">
+              افزودن به سبد
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ---------- کارت محصول ۶: کلوچه ---------- -->
+      <article class="product-card reveal">
+        <div class="product-photo product-photo--koloocheh"><img src="img/koloocheh.jpg" alt="کلوچه فومنی"></div>
+        <div class="product-body">
+          <h3>کلوچه فومنی</h3>
+          <div class="name-divider"></div>
+          <p>
+            <span class="story-lead">الهام‌گرفته از کلوچه‌های اصیل فومن؛</span>
+            <span class="story-mid">خمیری نرم و برنجی با مغز گردو، پخته در تنور سنتی.</span>
+            <span class="story-occ">انتخابی گرم برای صبحانه.</span>
+          </p>
+          <div class="product-footer">
+            <span class="price">۱۱۰,۰۰۰ تومان</span>
+            <button type="button" class="btn-add"
+                    data-id="koloocheh-fouman" data-name="کلوچه فومنی" data-price="110000">
+              افزودن به سبد
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     ۵. گالری — فقط نمایشی است، نیاز به تعامل ندارد
+     ====================================================================== -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">نگاهی از نزدیک</div>
+      <h2>گالری نلا</h2>
+      <p>لحظه‌هایی از آشپزخانه و مواد اولیه‌ی ما</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item wide tall reveal gallery-item--saffron"><img class="gallery-photo" src="img/g-saffron.jpg" alt="رشته‌های طلایی زعفران"><div class="caption">رشته‌های طلایی زعفران</div></div>
+      <div class="gallery-item reveal gallery-item--pistachio"><img class="gallery-photo" src="img/g-pistachio.jpg" alt="مغز پسته‌ی تازه"><div class="caption">مغز پسته‌ی تازه</div></div>
+      <div class="gallery-item reveal gallery-item--rose"><img class="gallery-photo" src="img/g-rosewater.jpg" alt="گلاب معطر"><div class="caption">گلاب معطر</div></div>
+      <div class="gallery-item tall reveal gallery-item--oven"><img class="gallery-photo" src="img/g-oven.jpg" alt="پخت روزانه در تنور سنتی"><div class="caption">پخت روزانه در تنور سنتی</div></div>
+      <div class="gallery-item wide reveal gallery-item--gift"><img class="gallery-photo" src="img/g-giftwrap.jpg" alt="بسته‌بندی دست‌ساز"><div class="caption">بسته‌بندی دست‌ساز</div></div>
+      <div class="gallery-item reveal gallery-item--honey"><img class="gallery-photo" src="img/g-honey.jpg" alt="عسل طبیعی کوهستان"><div class="caption">عسل طبیعی کوهستان</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     ۶. طرز تهیه‌ی هفته — محتوایش با جاوااسکریپت و بر اساس شماره‌ی هفته‌ی
+     سال، به‌صورت خودکار عوض می‌شود (چهار دستور در چرخش).
+     ====================================================================== -->
+<section id="recipe" class="alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">آشپزخانه‌ی باز</div>
+      <h2>طرز تهیه‌ی این هفته</h2>
+      <p>هر هفته یکی از رازهای آشپزخانه‌ی نلا را با شما در میان می‌گذاریم</p>
+    </div>
+
+    <div class="recipe-card reveal">
+      <div class="recipe-top">
+        <div class="recipe-visual">
+          <div class="recipe-seal"><span>هفته</span><b id="weekNumber">--</b></div>
+          <svg id="recipeIcon" viewBox="0 0 200 200"></svg>
+        </div>
+        <div class="recipe-body">
+          <div class="eyebrow">دستور هفته</div>
+          <h2 id="recipeTitle">در حال بارگذاری...</h2>
+          <p id="recipeDesc"></p>
+          <p class="recipe-note">این بخش به‌صورت خودکار هر هفته با یک دستور تازه به‌روزرسانی می‌شود.</p>
+        </div>
+      </div>
+      <div class="recipe-strip">
+        <div class="recipe-strip-item">
+          <h4>مواد لازم</h4>
+          <ul id="recipeIngredients"></ul>
+        </div>
+        <div class="recipe-strip-item">
+          <h4>روش تهیه</h4>
+          <ol id="recipeSteps"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     ۷. تماس با ما — فرم واقعی با اعتبارسنجی سمت کاربر
+     ====================================================================== -->
+<section id="contact">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <div class="eyebrow">در تماس باشید</div>
+      <h2>سفارش دهید یا سوال بپرسید</h2>
+      <p class="contact-lead">برای سفارش عمده‌ی مجالس، مراسم شرکتی یا هر سوال دیگری، فرم زیر را پر کنید؛ در سریع‌ترین زمان پاسخ می‌دهیم.</p>
+      <ul class="contact-info">
+        <li>تهران، خیابان ولیعصر</li>
+        <li>۰۲۱-۱۲۳۴۵۶۷۸</li>
+        <li>info@nela-sweets.ir</li>
+      </ul>
+    </div>
+
+    <form class="contact-form reveal" id="contactForm" novalidate>
+      <div class="form-row">
+        <label for="cName">نام و نام‌خانوادگی</label>
+        <input type="text" id="cName" name="cName" placeholder="مثلاً مریم احمدی" required>
+        <span class="form-error" id="cNameError"></span>
+      </div>
+      <div class="form-row">
+        <label for="cPhone">شماره تماس</label>
+        <input type="tel" id="cPhone" name="cPhone" placeholder="۰۹xxxxxxxxx" required>
+        <span class="form-error" id="cPhoneError"></span>
+      </div>
+      <div class="form-row">
+        <label for="cMessage">پیام شما</label>
+        <textarea id="cMessage" name="cMessage" rows="4" placeholder="سوال یا درخواست خود را بنویسید..." required></textarea>
+        <span class="form-error" id="cMessageError"></span>
+      </div>
+      <button type="submit" class="btn">ارسال پیام</button>
+      <p class="form-success" id="contactSuccess" hidden>پیام شما با موفقیت ارسال شد؛ به‌زودی با شما تماس می‌گیریم.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ======================================================================
+     ۸. فوتر — شامل فرم خبرنامه‌ی کوچک
+     ====================================================================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="brand-icon"><img src="img/logo.png" alt="لوگو نلا"></span>
+          <span class="brand-name">نلا</span>
+        </div>
+        <p>شیرینی‌سرای دست‌ساز نلا، از سال ۱۳۹۲ در کنار خانواده‌ی شما.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>دسترسی سریع</h4>
+        <ul>
+          <li><a href="#about">درباره ما</a></li>
+          <li><a href="#products">محصولات</a></li>
+          <li><a href="#gallery">گالری</a></li>
+          <li><a href="#recipe">طرز تهیه هفته</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>خبرنامه شیرین</h4>
+        <p class="footer-note">از تخفیف‌ها و دستورهای تازه باخبر شوید</p>
+        <form class="newsletter-form" id="newsletterForm" novalidate>
+          <input type="email" id="newsletterEmail" placeholder="ایمیل شما" required>
+          <button type="submit">عضویت</button>
+        </form>
+        <span class="form-error" id="newsletterError"></span>
+        <p class="form-success" id="newsletterSuccess" hidden>عضویت شما ثبت شد!</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© ۱۴۰۴ نلا. تمامی حقوق محفوظ است.</span>
+      <span>طراحی و توسعه با ❥ برای دوستداران شیرینی اصیل ایرانی</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================================================================
+     ۹. پنل سبد خرید (Cart Drawer)
+     یک پنل کشویی که به‌طور پیش‌فرض پنهان است (کلاس open آن را نمایان می‌کند).
+     محتوای لیست کالاها به‌طور کامل با جاوااسکریپت ساخته می‌شود.
+     ====================================================================== -->
+<div class="overlay" id="overlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer" aria-label="سبد خرید">
+  <div class="cart-drawer-head">
+    <h3>سبد خرید</h3>
+    <button type="button" class="icon-btn" id="closeCartBtn" aria-label="بستن سبد خرید">✕</button>
+  </div>
+
+  <div class="cart-items" id="cartItems">
+    <!-- ردیف‌های سبد خرید اینجا با جاوااسکریپت اضافه می‌شوند -->
+    <p class="cart-empty" id="cartEmptyMsg">سبد خرید شما خالی است.</p>
+  </div>
+
+  <div class="cart-drawer-foot">
+    <div class="cart-total-row">
+      <span>جمع کل</span>
+      <span id="cartTotal">۰ تومان</span>
+    </div>
+    <button type="button" class="btn btn-block" id="goToCheckoutBtn" disabled>ادامه و تسویه‌حساب</button>
+  </div>
+</aside>
+
+<!-- ======================================================================
+     ۱۰. پنجره‌ی تسویه‌حساب (Checkout Modal)
+     ====================================================================== -->
+<div class="modal" id="checkoutModal" aria-hidden="true">
+  <div class="modal-box">
+
+    <button type="button" class="icon-btn modal-close" id="closeCheckoutBtn" aria-label="بستن">✕</button>
+
+    <!-- مرحله‌ی ۱: فرم اطلاعات سفارش -->
+    <div id="checkoutFormView">
+      <h3>تکمیل سفارش</h3>
+
+      <div class="checkout-summary" id="checkoutSummary">
+        <!-- خلاصه‌ی سفارش با جاوااسکریپت پر می‌شود -->
+      </div>
+
+      <form id="checkoutForm" novalidate>
+        <div class="form-row">
+          <label for="oName">نام و نام‌خانوادگی</label>
+          <input type="text" id="oName" required>
+          <span class="form-error" id="oNameError"></span>
+        </div>
+        <div class="form-row">
+          <label for="oPhone">شماره تماس</label>
+          <input type="tel" id="oPhone" placeholder="۰۹xxxxxxxxx" required>
+          <span class="form-error" id="oPhoneError"></span>
+        </div>
+        <div class="form-row">
+          <label for="oAddress">آدرس کامل</label>
+          <textarea id="oAddress" rows="3" required></textarea>
+          <span class="form-error" id="oAddressError"></span>
+        </div>
+
+        <div class="form-row">
+          <span class="form-label-static">نحوه‌ی پرداخت</span>
+          <div class="radio-group">
+            <label><input type="radio" name="payMethod" value="cod" checked> پرداخت در محل</label>
+            <label><input type="radio" name="payMethod" value="card"> کارت به کارت</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-block">ثبت نهایی سفارش</button>
+      </form>
+    </div>
+
+    <!-- مرحله‌ی ۲: پیام موفقیت سفارش (پیش‌فرض پنهان است) -->
+    <div id="checkoutSuccessView" hidden>
+      <div class="success-icon">✓</div>
+      <h3>سفارش شما ثبت شد!</h3>
+      <p>شماره‌ی پیگیری سفارش شما: <b id="orderNumber">--</b></p>
+      <p class="recipe-note">همکاران ما به‌زودی برای هماهنگی ارسال با شما تماس می‌گیرند.</p>
+      <button type="button" class="btn btn-block" id="closeSuccessBtn">باشه، متوجه شدم</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================================================================
+     ۱۱. نوتیفیکیشن کوچک شناور (Toast) — برای پیام «به سبد اضافه شد»
+     ====================================================================== -->
+<div class="toast" id="toast"></div>
+
+<!-- فایل جاوااسکریپت — حتماً باید بعد از تمام محتوای صفحه لود شود -->
+<script src="script.js"></script>
+</body>
+</html>
